@@ -38,7 +38,7 @@ def generate():
 
     # Load model
     from keras.models import load_model
-    model = load_model(os.path.join(BASE_DIR, 'model-50-epochs.h5'))
+    model = load_model(os.path.join(BASE_DIR, 'baby_name_app/model-50-epochs.h5'))
 
     int_to_char = dict((i, c) for i, c in enumerate(chars))
 
