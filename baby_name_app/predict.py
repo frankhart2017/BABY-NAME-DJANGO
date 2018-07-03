@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def generate():
     # load ascii text and covert to lowercase
     filename = os.path.join(BASE_DIR, 'baby_name_app/boy.txt')
-    raw_text = open(filename).read()
+    raw_text = open(filename, encoding="ISO 8859-1").read()
     raw_text = raw_text.lower()
 
     # create mapping of unique chars to integers
@@ -38,7 +38,7 @@ def generate():
 
     # Load model
     from keras.models import load_model
-    model = load_model(os.path.join(BASE_DIR, 'baby_name_app/model-50-epochs.h5'))
+    model = load_model(os.path.join(BASE_DIR, 'model-50-epochs.h5'))
 
     int_to_char = dict((i, c) for i, c in enumerate(chars))
 
